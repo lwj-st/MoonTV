@@ -28,7 +28,7 @@ jobs:
           upstream_sync_repo: senshinya/MoonTV
           upstream_sync_branch: main
           target_sync_branch: main
-          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+          target_repo_token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
       - name: Sync check
         if: failure()
@@ -39,7 +39,7 @@ jobs:
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@main
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           retain_days: 0
           keep_minimum_runs: 2
